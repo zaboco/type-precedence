@@ -1,0 +1,6 @@
+/src
+/spec
+node_modules
+*.sublime*
+Gruntfile.js
+.travis.yml

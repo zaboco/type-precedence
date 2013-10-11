@@ -1,0 +1,36 @@
+{
+  "name": "type-precedence",
+  "version": "0.1.0",
+  "description": "type-precedence module",
+  "dependencies": {
+    "prelude-ls": "~1.0.0",
+    "type-check": "~0.2.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-livescript": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-lineending": "~0.2.1",
+    "grunt-verbosity": "~0.2.2",
+    "grunt-mocha-test": "~0.7.0",
+    "mocha": "~1.13.0",
+    "chai": "~1.8.0"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "grunt test",
+    "prepublish": "grunt dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zaboco/type-precedence.git"
+  },
+  "keywords": [
+    "util",
+    "library"
+  ],
+  "author": "Bogdan Zaharia",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
