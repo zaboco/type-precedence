@@ -12,7 +12,7 @@ that = it
 
 describe 'compare-types' ->
   that 'throws Error when one of types does not match target' ->
-    expect (-> compare-types \String, \Number, 1) .to.throw /<1> does not match <String>/
+    expect (-> compare-types \String, \Number, matching: 1) .to.throw /<1> does not match <String>/
   describe 'wildcard' ->
     that 'first' -> expect compare-types \*, \String .to.eql 1
     that 'second' -> expect compare-types \String, \* .to.eql -1
@@ -46,15 +46,15 @@ describe 'compare-types' ->
       that 'more' -> expect compare-types '(*, *)', '(*, String)' .to.eql 1
   describe 'multiple types' ->
     that 'best match wins' ->
-      expect compare-types 'Object | Array | String', 'Number | {x: *}', {x: 1} .to.eql 1
-      expect compare-types 'Object | Array | String', 'Number | {x: *} | *', [1] .to.eql -1
+      expect compare-types 'Object | Array | String', 'Number | {x: *}', matching: {x: 1} .to.eql 1
+      expect compare-types 'Object | Array | String', 'Number | {x: *} | *', matching: [1] .to.eql -1
     that 'first match wins when equal' ->
-      expect compare-types 'String | Number', 'Number | String', \s .to.eql -1
-      expect compare-types 'String | Number', 'Number | String', 21 .to.eql 1
+      expect compare-types 'String | Number', 'Number | String', matching: \s .to.eql -1
+      expect compare-types 'String | Number', 'Number | String', matching: 21 .to.eql 1
     that 'Maybe also works' ->
       expect compare-types 'Number', 'Maybe Number' .to.eql -1
       expect compare-types 'Maybe [Number]', 'Maybe Array' .to.eql -1
-      expect compare-types 'Maybe Number | String', 'Maybe String | Number', 1 .to.eql -1
+      expect compare-types 'Maybe Number | String', 'Maybe String | Number', matching: 1 .to.eql -1
       expect compare-types 'Maybe Null', 'Null' .to.eql 1
 
 describe 'best-type' ->

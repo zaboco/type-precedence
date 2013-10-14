@@ -86,14 +86,14 @@ throw-mismatch-error = (t, target) ->
 validate-types = (types, against: target) ->
   for t in types then throw-mismatch-error t, target if type-mismatch t, target
 
-compare-types = (ta, tb, target) ->
+compare-types = (ta, tb, {matching: target} = {}) ->
   validate-types [ta, tb], against: target if target
   [pa, pb] = map parse-type, [ta, tb]
   compare-parsed pa, pb, target
 
 sort-types = (types, {matching}={}) ->
   types = filter (-> type-check it, matching), types if matching
-  sort-with (compare-types _, _, matching), types
+  sort-with (compare-types _, _, {matching}), types
 
 best-type = (in: types, matching: target) ->
   first sort-types types, matching: target
