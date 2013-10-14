@@ -19,7 +19,7 @@ $ npm install type-precedence
 * `String | Number < Number | String` for value `'s'`
 * everything\* above applied recursively for `[arrays]`, `{fields}` or `(tuples)` (e.g `{x: [Number]} < {x: [*]}`)
 
-_\*actually __almost__ everything - `(String | Number, *)` and `(Number | String, *)` would be equal for any value. So ambiguous `|` (i.e. where you need a target value to decide which is best) will not work recursively._
+_\*actually **almost** everything - `(String | Number, *)` and `(Number | String, *)` would be equal for any value. So ambiguous `|` (i.e. where you need a target value to decide which is best) will not work recursively._
 
 ## Usage
 > _the following examples are written in [LiveScript](http://livescript.net/), but, of course, the library can be used for javascript too_
