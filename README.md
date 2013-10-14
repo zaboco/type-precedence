@@ -27,21 +27,21 @@ _\*actually __almost__ everything - `(String | Number, *)` and `(Number | String
 ```ls
 {best-type, sort-types, compare-types} = require \type-precedence
 ```
-### .best-type in: types[, matching: target]
+### best-type in: types[, matching: target]
 Gets the most specific type from a list of types, optionally matching a target value
 ```ls
 best-type in: <[Array [*] *]> # [*]
 best-type in: ['Number | String', 'String | Number'], matching: 1 # 'Number | String', since the value is a Number
 ```
 
-### .sort-types types[, matching: target]
+### sort-types types[, matching: target]
 Sorts the types by precedence - the most specific will be first in the sorted list. It optionally checks against a target value
 ```ls
 sort-types <[Array [*] *]> # <[[*] Array *]>
 sort-types ['{x: Number, ...}' '{...}' '{x: *}' '*' 'Object'] # ['{x: *}' '{x: Number, ...}' '{...}' 'Object' '*']
 ```
 
-### .compare-types type-a, type-b[, matching: target]
+### compare-types type-a, type-b[, matching: target]
 Compare two types, optionally checking against a target value. It returns -1, 0, or 1.
 ```ls
 compare-types '{x: String, ...}', '{x: *, ...}' # -1
