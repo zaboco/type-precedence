@@ -1,7 +1,7 @@
 {
   "name": "type-precedence",
   "version": "0.1.0",
-  "description": "type-precedence module",
+  "description": "provides ordering by precedence for type-check types",
   "dependencies": {
     "prelude-ls": "~1.0.0",
     "type-check": "~0.2.0"
@@ -27,7 +27,9 @@
     "url": "git@github.com:zaboco/type-precedence.git"
   },
   "keywords": [
-    "util",
+    "type",
+    "check",
+    "precedence",
     "library"
   ],
   "author": "Bogdan Zaharia",
