@@ -22,7 +22,7 @@ $ npm install type-precedence
 _\*actually **almost** everything - `(String | Number, *)` and `(Number | String, *)` would be equal for any value. So ambiguous `|` (i.e. where you need a target value to decide which is best) will not work recursively._
 
 ## Usage
-> _the following examples are written in [LiveScript](http://livescript.net/), but, of course, the library can be used for javascript too_
+> _the following examples are written in [LiveScript](http://livescript.net/), but, of course, the library can be used for javascript too._
 
 ```ls
 {best-type, sort-types, compare-types} = require \type-precedence
